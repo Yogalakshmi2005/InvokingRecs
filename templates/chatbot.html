@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--mobile meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!--site meta-->
+  <title>InvokingRecs</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+     <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style=" display: flex; flex-direction: column; min-height: 100vh; margin 0;">
+<div class="header">
+  <div id="invokingrecs">InvokingRecs</div>
+</div>
+<div class="chat-wrapper">
+    <div class="chat-container">
+        <div class="chat-header">
+            <img src="{{ url_for('static', filename='images/bgs/ai.jpg') }}" alt="img3" style=" border-radius: 50%; height: 40px; width: 50px;">
+            ProvenZa - Self-help Book Assistant
+        </div>
+        <div class="chat-body" id="chatBody">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" class="form-control" placeholder="Ask for book recommendations..." onkeypress="handleKeyPress(event)">
+            <button class="btn btn-send" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<script>
+  function sendMessage() {
+    let userInput = document.getElementById("userInput").value.trim();
+    if (!userInput) return;
+
+    let chatBody = document.getElementById("chatBody");
+
+    // Create user message element safely
+    let userMessageDiv = document.createElement("div");
+    userMessageDiv.classList.add("user-message");
+    userMessageDiv.textContent = userInput;
+    chatBody.appendChild(userMessageDiv);
+
+    // Scroll to the latest message
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // Send user message to Flask API
+    fetch("/api/chatbot", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: userInput })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Server Error: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        let botMessageDiv = document.createElement("div");
+        botMessageDiv.classList.add("bot-message");
+        botMessageDiv.textContent = data.response || "Sorry, I couldn't understand that.";
+        chatBody.appendChild(botMessageDiv);
+
+        // Auto-scroll to bottom
+        chatBody.scrollTop = chatBody.scrollHeight;
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        let errorDiv = document.createElement("div");
+        errorDiv.classList.add("bot-message", "error");
+        errorDiv.textContent = "Bot: Sorry, something went wrong.";
+        chatBody.appendChild(errorDiv);
+
+        // Auto-scroll to bottom
+        chatBody.scrollTop = chatBody.scrollHeight;
+    });
+
+    // Clear input field
+    document.getElementById("userInput").value = "";
+}
+
+function handleKeyPress(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+}
+</script>
+   <footer class="footer">
+       <p>&copy; 2025 InvokingRecs. All Rights Reserved.</p>
+   </footer>
+</body>
+</html>
