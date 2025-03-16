@@ -23,9 +23,9 @@ users_collection = mongo.db.users
 
 try:
     mongo.db.command("ping")
-    print("✅ Connected to MongoDB Successfully!")
+    print("Connected to MongoDB Successfully!")
 except Exception as e:
-    print("❌ MongoDB Connection Error:", e)
+    print("MongoDB Connection Error:", e)
 
 bcrypt = Bcrypt(app)
 
