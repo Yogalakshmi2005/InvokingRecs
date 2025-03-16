@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--mobile meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!--site meta-->
+  <title>InvokingRecs</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--links of stylesheets,scripts,-->
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+  <div class="header">
+    <div id="invokingrecs">InvokingRecs</div>
+  </div>
+  <div class="container">
+    <center>
+      <h1 style="color: #002349;">Recommendations</h1>
+      <h6>Looking for a new book to read? Our recommendation page is here to help.Browse through our selection of top picks and discover your next great read.</h6>
+      <br>
+      <h6>Unlock your potential and transform your life with self-help books.These inspiring guides offer practical wisdom and expert advice to help you overcome obstacles,build resilience, and achieve your goals. From personal growth and relationships to career development and wellness,self-help books provide the tools and motivation you need to succed. Dive into our collection and discover the power of self-help to improve your life, boost your confidence, and unleash your full potential</h6>
+      </center>
+  </div>
+  <div class="text-center">
+    <h2><b>Looking to improve a specific area of your life?</b></h2>
+      <h4>If you want to develop your personal growth , you can read...</h4>
+  </div>
+  <div class="container mt-5">
+    <h2 class="text-center" style="color: #957C3D;">Personal development</h2>
+    <div class="scroll-container">
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b1.jpg') }}" alt="img1">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b2.jpg') }}" alt="img2">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b3.jpg') }}" alt="img3">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b4.jpg') }}" alt="img4">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b5.jpg') }}" alt="img5">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="text-center">
+      <h4>If you want to manage your personal finance effectively, you can read...</h4>
+  </div>
+  <div class="container mt-5">
+    <h2 class="text-center" style="color: #957C3D;">Financial Wellness</h2>
+    <div class="scroll-container">
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b47.jpg') }}" alt="img1">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b58.jpg') }}" alt="img2">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b80.jpg') }}" alt="img3">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b113.jpg') }}" alt="img4">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b135.jpg') }}" alt="img5">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="text-center">
+      <h4>If you want to understand and manage your emotions  , you can read...</h4>
+  </div>
+  <div class="container mt-5">
+    <h2 class="text-center" style="color: #957C3D;">Emotional intelligence</h2>
+    <div class="scroll-container">
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b22.png') }}" alt="img1">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b33.jpg') }}" alt="img2">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b36.jpg') }}" alt="img3">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b41.jpg') }}" alt="img4">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b45.jpg') }}" alt="img5">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="text-center">
+<!--    <h4>-->
+<!--      <b>"To know discover more details about the categories visit our explore page"</b>-->
+<!--    </h4>-->
+    <div class="read-more"><a href="{{ url_for('explore') }}">Explore</a></div>
+  </div>
+  <br>
+   <div class="container mt-5">
+    <h2 class="text-center" style="color: #957C3D;">Visit the Explore</h2>
+     <p class="text-center" style="font-weight: bold; font-size: 20px;">To get more like this... </p>
+    <div class="scroll-container">
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b6.jpg') }}" alt="img1">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b7.jpg') }}" alt="img2">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b8.jpg') }}" alt="img3">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b9.jpg') }}" alt="img4">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b10.jpg') }}" alt="img5">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b11.jpg') }}" alt="img5">
+      </div>
+      <div class="scroll-item">
+        <img src="{{ url_for('static', filename='images/b12.jpg') }}" alt="img5">
+      </div>
+    </div>
+  </div>
+  <br><br>
+   <div class="floating-btn-container">
+     <a href="{{ url_for('chatbot')}}" class="floating-btn"  id="fab">
+       <img src="{{ url_for('static', filename='images/bgs/ai.jpg')}}" alt="chatbot">
+       <span>Chat with ProvenZa</span>
+     </a>
+   </div>
+  <footer class="footer">
+      <p>&copy; 2025 InvokingRecs. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
