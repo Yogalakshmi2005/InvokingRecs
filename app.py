@@ -4,9 +4,12 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from flask_cors import CORS
 import os
+from dotenv import load_dotenv
 from bson import ObjectId
 from bson.errors import InvalidId
 import requests
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
